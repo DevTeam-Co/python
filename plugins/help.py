@@ -38,7 +38,7 @@ def run(message, matches, chat_id, step):
     if public_plugins:
         res.append([InlineKeyboardButton(text='Next ▶️', callback_data='/helpn 1')])
     markup = InlineKeyboardMarkup(inline_keyboard=res)
-    response.set_text("Welcome to Siarobo\nSelect One of these Items.", parse_mode="Markdown", reply_markup=markup)
+    response.set_text("Welcome to Amin's Test bot\nSelect One of these Items.", parse_mode="Markdown", reply_markup=markup)
     return [response]
 
 
@@ -51,7 +51,7 @@ def callback(message, matches, chat_id):
             res.append([InlineKeyboardButton(text='Next ▶️', callback_data='/helpn 1')])
         markup = InlineKeyboardMarkup(inline_keyboard=res)
         msgid = (chat_id, message['message']['message_id'])
-        return Message(from_id).edit_message(msgid, "Welcome to Siarobo\nSelect One of these Items.",
+        return Message(from_id).edit_message(msgid, "Welcome to Amin's Test bot\nSelect One of these Items.",
                                              parse_mode="Markdown",
                                              reply_markup=markup)
     elif "/helpn" in data:
@@ -66,7 +66,7 @@ def callback(message, matches, chat_id):
             res.append([InlineKeyboardButton(text='◀️ Previous', callback_data='/helpn ' + str(num - 1))])
         markup = InlineKeyboardMarkup(inline_keyboard=res)
         msgid = (chat_id, message['message']['message_id'])
-        return Message(from_id).edit_message(msgid, "Welcome to Siarobo\nSelect One of these Items.",
+        return Message(from_id).edit_message(msgid, "Welcome to Amin's Testbot\nSelect One of these Items.",
                                              parse_mode="Markdown",
                                              reply_markup=markup)
     elif matches:
